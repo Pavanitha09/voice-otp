@@ -101,7 +101,7 @@ def random_digit_generator(speaker_path, number_of_digits, number_of_combination
 
         combs = product(files, repeat=number_of_digits) # all possible n digits combinations possible
         random.seed(seed_value+i)
-        combs = random.sample(combs, number_of_combinations) # from all possible combinations picking n unquie values
+        random_list = random.sample(combs, number_of_combinations) # from all possible combinations picking n unquie values
 
         for comb in random_list:
             file_savepath = session + "merged_audios/" + str(number_of_digits) + "/"
