@@ -123,35 +123,35 @@ def random_digit_generator(speaker_path, number_of_digits, number_of_combination
 
 if __name__ == '__main__':
 
-# Main function generates for all speakers in the data folder for to generate all possible for number_of_digits taken as input
-#---------------------------------------------------------------------
-number_of_digits = int(input("number of digits : "))
-speakers = glob("data/*/")
-speakers.sort()
-for speaker_path in speakers:
-    print(speaker_path)
-    digit_generator(speaker_path,number_of_digits)
-#---------------------------------------------------------------------
+    # Main function generates for all speakers in the data folder for to generate all possible for number_of_digits taken as input
+    #---------------------------------------------------------------------
+    number_of_digits = int(input("number of digits : "))
+    speakers = glob("data/*/")
+    speakers.sort()
+    for speaker_path in speakers:
+        print(speaker_path)
+        digit_generator(speaker_path,number_of_digits)
+    #---------------------------------------------------------------------
 
-#---------------------------------------------------------------------
-"Uncomment this code for random_digit_generator for all speakers in data folder"
-# number_of_digits = int(input("number of digits : "))
-# number_of_combinations = int(input("number of combintions : "))
-# seed_value = int(input("seed : "))
-# speakers = glob("data/*/")
-# speakers.sort()
-# for speaker_path in speakers:
-#     print(speaker_path)
-#     random_digit_generator(speaker_path,number_of_digits,number_of_combinations,seed_value)
-#---------------------------------------------------------------------
+    #---------------------------------------------------------------------
+    "Uncomment this code for random_digit_generator for all speakers in data folder"
+    # number_of_digits = int(input("number of digits : "))
+    # number_of_combinations = int(input("number of combintions : "))
+    # seed_value = int(input("seed : "))
+    # speakers = glob("data/*/")
+    # speakers.sort()
+    # for speaker_path in speakers:
+    #     print(speaker_path)
+    #     random_digit_generator(speaker_path,number_of_digits,number_of_combinations,seed_value)
+    #---------------------------------------------------------------------
 
-#----------------------------------------------------------------------
-"uncomment this part for generating for only desired speakers"
-# t = int(input("Number of speakers : "))
-#
-# for _ in range(t):
-#     speaker_path = input("speaker_path : ")
-#     number_of_digits = int(input("number of digits : "))
-#
-#     digit_generate(speaker_path,number_of_digits)
-#----------------------------------------------------------------------
+    #----------------------------------------------------------------------
+    "uncomment this part for generating for only desired speakers"
+    # t = int(input("Number of speakers : "))
+    #
+    # for _ in range(t):
+    #     speaker_path = input("speaker_path : ")
+    #     number_of_digits = int(input("number of digits : "))
+    #
+    #     digit_generate(speaker_path,number_of_digits)
+    #----------------------------------------------------------------------
