@@ -14,10 +14,10 @@ This repository contains code and instructions for generating OTPs from audio fi
     - digit_generator.py: Generates OTPs from audio files.
 
 **2. Speaker Identification**
-    - extracting_features.py: Extracts x-vectors (saved as .npy files) from audio files using the ECAPA-TDNN model.
-    - logreg_model_train.py: Trains a logistic regression model using the x-vectors and saves the trained model as a .pkl file.
-    - model_test.py: Tests the speaker identification model on the test dataset.
-    - speaker_identification.py: Handles the timing details for the speaker identification process.
+    * extracting_features.py: Extracts x-vectors (saved as .npy files) from audio files using the ECAPA-TDNN model.
+    * logreg_model_train.py: Trains a logistic regression model using the x-vectors and saves the trained model as a .pkl file.
+    * model_test.py: Tests the speaker identification model on the test dataset.
+    * speaker_identification.py: Handles the timing details for the speaker identification process.
     
 **3. Digit Recognition**
     - digit_recognition.py: Uses a Conformer model for digit recognition.
@@ -29,9 +29,9 @@ combined_SI_and_OI.py: Contains the full workflow for voice OTP authentication, 
 
 ## Finetuning
 
-    **Speaker Identification Finetuning**:
-        - The Finetuning folder contains files related to ECAPA-TDNN model finetuning.
-        - To use a finetuned ECAPA-TDNN model, follow the same steps as above, replacing the model path with the finetuned version.
+   **Speaker Identification Finetuning**:
+        * The Finetuning folder contains files related to ECAPA-TDNN model finetuning.
+        * To use a finetuned ECAPA-TDNN model, follow the same steps as above, replacing the model path with the finetuned version.
 Reference: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/ecapa_tdnn
 Refer to this link for more details
 
