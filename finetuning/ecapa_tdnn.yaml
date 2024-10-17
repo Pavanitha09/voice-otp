@@ -1,0 +1,37 @@
+# Corrected config.yaml
+sample_rate: 16000
+
+train_ds:
+  manifest_filepath: ./train_manifest.json
+  batch_size: 64
+
+validation_ds:
+  manifest_filepath: ./validation_manifest.json
+  batch_size: 64
+
+trainer:
+  max_epochs: 10
+  gpus: 0  # Set to the number of available GPUs
+  precision: 16  # For mixed-precision training if supported
+  accumulate_grad_batches: 1
+  gradient_clip_val: 0.1  # Optional, adjust as needed
+  log_every_n_steps: 100
+
+optimization:
+  optimizer: adam
+  optimizer_params:
+    lr: 0.001
+  schedulers:
+    - name: OneCycleLR
+      params:
+        max_lr: 0.001
+        epochs: 10
+
+speakers:
+  train: ./train_manifest.json
+  validation: ./validation_manifest.json
+
+task:
+  name: speaker_verification
+  train_ds: speaker_verification
+  validation_ds: speaker_verification
