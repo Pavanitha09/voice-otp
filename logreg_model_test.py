@@ -19,20 +19,20 @@ def test_model(model_path, test_data, test_labels):
     with open(model_path, 'rb') as file: # loading model
         model = pickle.load(file)
     load_end = time.time()
-    load_time = load_end - load_time
+    load_time = load_end - load_start
 
     test_times = []
     prediction = []
     for test_file in test_data:
         test_start = time.time()
-        prediction += model.predict(test_file)
+        prediction.extend(model.predict(test_file))
         test_end = time.time()
         test_times.append(test_end - test_start)
 
     avg_test_time = statistics.mean(test_times)
-    accuracy = accuracy_score(test_labels, pred_labels)
+    accuracy = accuracy_score(test_labels, prediction)
 
-    return load_time, avg_test_time, accuracy, pred_labels
+    return load_time, avg_test_time, accuracy, prediction
 
 if __name__ == '__main__':
 
@@ -50,9 +50,10 @@ if __name__ == '__main__':
     for speaker_path in folders:
         l = glob(speaker_path+"/*['D']/"+str(n)+'/*.npy')
         l.sort()
-        label = re.findall(r"[\w']+", speaker_path)[-4]
+        label = re.split(r'/|\|//|\\', speaker_path)[-2]
+
         for vector_path in l:
-            file = np.load(str(vector))
+            file = np.load(str(vector_path))
             test_data.append(file)
             test_labels.append(label)
 
